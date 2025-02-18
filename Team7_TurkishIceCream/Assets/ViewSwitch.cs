@@ -15,11 +15,11 @@ public class ViewSwitch : MonoBehaviour
 
     public void LoadNewView() {
         //change scene names!
-        if(SceneManager.GetActiveScene().name == "MaddaView1") {
+        if(SceneManager.GetActiveScene().name == "CursorMovement") {
             SceneManager.LoadScene("MaddaView2");
 
         } else if(SceneManager.GetActiveScene().name == "MaddaView2") {
-            SceneManager.LoadScene("MaddaView1");
+            SceneManager.LoadScene("CursorMovement");
         }
     }
 }
