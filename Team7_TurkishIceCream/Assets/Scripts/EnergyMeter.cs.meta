@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8b28422734d6a4d7496283b2c0d620cf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cursor: {fileID: 7777787549179060213, guid: 3f4edc3cbf3bf6e4791a9181a4793a05, type: 3}
+  - positionParent: {fileID: 7316873972178858429, guid: 9026791fdbcd37a43b7ab55416d11c5d, type: 3}
+  - happyFace: {instanceID: 0}
+  - straightFace: {instanceID: 0}
+  - sadFace: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

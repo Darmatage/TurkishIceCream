@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3826535068521033784
+--- !u!1 &37993093209173835
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 948107095578504111}
-  - component: {fileID: 6859870817188414659}
+  - component: {fileID: 419483539583577196}
+  - component: {fileID: 7902179279495150858}
   m_Layer: 0
-  m_Name: Child
-  m_TagString: Untagged
+  m_Name: GameHandler 1
+  m_TagString: GameHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &948107095578504111
+--- !u!4 &419483539583577196
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826535068521033784}
+  m_GameObject: {fileID: 37993093209173835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 511.59924, y: 175.58627, z: -21.372864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6859870817188414659
+--- !u!114 &7902179279495150858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826535068521033784}
+  m_GameObject: {fileID: 37993093209173835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3413cd79054c40d69594ed5de39ad65, type: 3}
+  m_Script: {fileID: 11500000, guid: bf128de5fbc9a4bf088732ef3ddbe583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyFace: {fileID: 0}
-  straightFace: {fileID: 0}
-  sadFace: {fileID: 0}
-  increaseButton: {fileID: 0}
-  decreaseButton: {fileID: 0}
-  energyChange: 5
-  energyText: {fileID: 0}
-  thresholdText: {fileID: 0}

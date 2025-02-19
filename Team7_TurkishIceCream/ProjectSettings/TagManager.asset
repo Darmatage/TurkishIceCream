@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameHandler
+  - Box
+  - Child
+  - C
+  - K
+  - L
+  - S
+  - TC
+  - V
   layers:
   - Default
   - TransparentFX
