@@ -13,6 +13,7 @@ TagManager:
   - S
   - TC
   - V
+  - GameHandlerButtons
   layers:
   - Default
   - TransparentFX
