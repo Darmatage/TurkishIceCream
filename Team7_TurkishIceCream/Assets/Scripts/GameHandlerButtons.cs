@@ -38,4 +38,8 @@ public class GameHandlerButtons : MonoBehaviour{
                 Application.Quit();
                 #endif
         }
+
+        public void HowToPlay() {
+                SceneManager.LoadScene("HowToPlay");
+        }
 }
