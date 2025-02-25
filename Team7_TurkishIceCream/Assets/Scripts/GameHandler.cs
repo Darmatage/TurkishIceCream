@@ -116,12 +116,6 @@ public class GameHandler : MonoBehaviour
         {
             sceneNum = 2;
             buttons.gameObject.SetActive(false);
-            /*button1.gameObject.SetActive(false);
-            button2.gameObject.SetActive(false);
-            button3.gameObject.SetActive(false);
-            button4.gameObject.SetActive(false);
-            button5.gameObject.SetActive(false);
-            button6.gameObject.SetActive(false);*/
             CursorMovement.gameObject.SetActive(true);
             canvas.gameObject.SetActive(true);
             Debug.Log("Correct Flavor");
