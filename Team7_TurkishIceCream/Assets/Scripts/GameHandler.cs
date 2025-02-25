@@ -27,7 +27,9 @@ public class GameHandler : MonoBehaviour
     public Button button3; 
     public Button button4; 
     public Button button5; 
-    public Button button6; 
+    public Button button6;
+    public GameObject CursorMovement;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class GameHandler : MonoBehaviour
         button4.gameObject.SetActive(false);
         button5.gameObject.SetActive(false);
         button6.gameObject.SetActive(false);
+        CursorMovement.gameObject.SetActive(false);
         updateFaceDisplay();
         sceneNum = 0;
         StartCoroutine(AdjustThreshold());
@@ -116,6 +119,8 @@ public class GameHandler : MonoBehaviour
             button4.gameObject.SetActive(false);
             button5.gameObject.SetActive(false);
             button6.gameObject.SetActive(false);
+            CursorMovement.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(true);
             Debug.Log("Correct Flavor");
         }
         else
