@@ -42,9 +42,13 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.button4.gameObject.SetActive(false);
             myGameHandler.button5.gameObject.SetActive(false);
             myGameHandler.button6.gameObject.SetActive(false);
+            myGameHandler.CursorMovement.gameObject.SetActive(true);
+            myGameHandler.canvas.gameObject.SetActive(false);
         } else { // do tricks 
             Debug.Log("SceneNum = " + myGameHandler.sceneNum);
             myGameHandler.sceneNum = 0;
+            myGameHandler.canvas.gameObject.SetActive(true);
+            myGameHandler.CursorMovement.gameObject.SetActive(false);
             myGameHandler.flavorText.gameObject.SetActive(true);
             myGameHandler.bubble.gameObject.SetActive(true);
             myGameHandler.updateFaceDisplay();
