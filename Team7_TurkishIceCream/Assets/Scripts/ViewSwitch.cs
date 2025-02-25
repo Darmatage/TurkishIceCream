@@ -27,21 +27,23 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.sadFace.gameObject.SetActive(false); 
             myGameHandler.flavorText.gameObject.SetActive(false);
             myGameHandler.bubble.gameObject.SetActive(false);
-            myGameHandler.button1.gameObject.SetActive(true);
+            /*myGameHandler.button1.gameObject.SetActive(true);
             myGameHandler.button2.gameObject.SetActive(true);
             myGameHandler.button3.gameObject.SetActive(true);
             myGameHandler.button4.gameObject.SetActive(true);
             myGameHandler.button5.gameObject.SetActive(true);
-            myGameHandler.button6.gameObject.SetActive(true);
+            myGameHandler.button6.gameObject.SetActive(true);*/
+            myGameHandler.buttons.gameObject.SetActive(true);
         } else if (myGameHandler.sceneNum == 1) { // pick flavor
             Debug.Log("SceneNum = " + myGameHandler.sceneNum);
             myGameHandler.sceneNum = 2;
-            myGameHandler.button1.gameObject.SetActive(false);
+            myGameHandler.buttons.gameObject.SetActive(false);
+            /*myGameHandler.button1.gameObject.SetActive(false);
             myGameHandler.button2.gameObject.SetActive(false);
             myGameHandler.button3.gameObject.SetActive(false);
             myGameHandler.button4.gameObject.SetActive(false);
             myGameHandler.button5.gameObject.SetActive(false);
-            myGameHandler.button6.gameObject.SetActive(false);
+            myGameHandler.button6.gameObject.SetActive(false);*/
             myGameHandler.CursorMovement.gameObject.SetActive(true);
             myGameHandler.canvas.gameObject.SetActive(false);
         } else { // do tricks 
