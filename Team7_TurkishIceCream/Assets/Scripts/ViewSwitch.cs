@@ -1,27 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ViewSwitch : MonoBehaviour
 {
     GameHandler myGameHandler;
     // Start is called before the first frame update
-    void Start()
+
+    bool iceCreamChosen = false;
+
+    public void Start()
     {
         myGameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
-    }    
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(1)) {
-            LoadNewView();
-        }
-    }
+        GetComponent<Button>().onClick.AddListener(LoadNewView);
+    }   
 
     public void LoadNewView() {
-        if(myGameHandler.sceneNum == 0) {
-            Debug.Log("SceneNum = " + myGameHandler.sceneNum);
-            myGameHandler.sceneNum = 1;
+        if (iceCreamChosen == false) {
+            //enter ice cream choosing view
             myGameHandler.happyFace.gameObject.SetActive(false);
             myGameHandler.straightFace.gameObject.SetActive(false);
             myGameHandler.sadFace.gameObject.SetActive(false); 
@@ -33,15 +32,20 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.button4.gameObject.SetActive(true);
             myGameHandler.button5.gameObject.SetActive(true);
             myGameHandler.button6.gameObject.SetActive(true);
-        } else if (myGameHandler.sceneNum == 1) { // pick flavor
+            myGameHandler.switchButton.gameObject.SetActive(false);
+            myGameHandler.panel.SetActive(true);
+            iceCreamChosen = true;
+        } else if (myGameHandler.sceneNum == 0) { // pick flavor
             Debug.Log("SceneNum = " + myGameHandler.sceneNum);
-            myGameHandler.sceneNum = 2;
+            myGameHandler.sceneNum = 1;
             myGameHandler.button1.gameObject.SetActive(false);
             myGameHandler.button2.gameObject.SetActive(false);
             myGameHandler.button3.gameObject.SetActive(false);
             myGameHandler.button4.gameObject.SetActive(false);
             myGameHandler.button5.gameObject.SetActive(false);
             myGameHandler.button6.gameObject.SetActive(false);
+            myGameHandler.switchButton.gameObject.SetActive(true);
+            myGameHandler.panel.SetActive(true);
             myGameHandler.CursorMovement.gameObject.SetActive(true);
             myGameHandler.canvas.gameObject.SetActive(false);
         } else { // do tricks 
@@ -50,7 +54,9 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.canvas.gameObject.SetActive(true);
             myGameHandler.CursorMovement.gameObject.SetActive(false);
             myGameHandler.flavorText.gameObject.SetActive(true);
+            myGameHandler.switchButton.gameObject.SetActive(true);
             myGameHandler.bubble.gameObject.SetActive(true);
+            myGameHandler.panel.SetActive(true);
             myGameHandler.updateFaceDisplay();
         }
     }

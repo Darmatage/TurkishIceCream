@@ -28,6 +28,8 @@ public class GameHandler : MonoBehaviour
     public Button button4; 
     public Button button5; 
     public Button button6;
+    public Button switchButton;
+    public GameObject panel;
     public GameObject CursorMovement;
     public GameObject canvas;
 
@@ -46,6 +48,7 @@ public class GameHandler : MonoBehaviour
         button5.gameObject.SetActive(false);
         button6.gameObject.SetActive(false);
         CursorMovement.gameObject.SetActive(false);
+        switchButton.gameObject.SetActive(true);
         updateFaceDisplay();
         sceneNum = 0;
         StartCoroutine(AdjustThreshold());
@@ -112,15 +115,17 @@ public class GameHandler : MonoBehaviour
     {
         if (buttonTag == flavorChosen)
         {
-            sceneNum = 2;
+            sceneNum = 1;
             button1.gameObject.SetActive(false);
             button2.gameObject.SetActive(false);
             button3.gameObject.SetActive(false);
             button4.gameObject.SetActive(false);
             button5.gameObject.SetActive(false);
             button6.gameObject.SetActive(false);
+            switchButton.gameObject.SetActive(true);
             CursorMovement.gameObject.SetActive(true);
             canvas.gameObject.SetActive(true);
+            panel.gameObject.SetActive(true);
             Debug.Log("Correct Flavor");
         }
         else
@@ -128,9 +133,6 @@ public class GameHandler : MonoBehaviour
             SceneManager.LoadScene("EndLose");
         }
     }
-
-
-
 
     public void StartGame() 
     {

@@ -505,7 +505,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -516,11 +516,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Objective: You are a Turkish ice cream vendor whose task is to entertain
-    customers with tricks while managing their emotions.\n\n- Follow on-screen prompts
-    to perform tricks.\n\U0001F7E2- React quickly to complete actions correctly.\n\U0001F7E2-
-    Keep the customer\u2019s energy level balanced to maximize earnings and avoid
-    getting fired!\n\n\n"
+  m_Text: "You were just hired as the newest worker at the Turkish Ice Cream Stand!
+    Welcome Aboard! Your job is to entertain potential customers into buying your
+    ice cream.\n\n- It is your job to keep the customer happy for as long as possible
+    by performing tricks to raise or lower their energy meter. The more longer you
+    go for, the higher the tip!\n- The customer's faces correspond to their energy
+    level: \n\t- Bored = Energy too low \n\t- Happy = Energy just right \n\t- Angry
+    = Energy too high\n- Start the game by correctly choosing the \ncustomer's ice
+    cream, and then start doing tricks!\n\n\n"
 --- !u!222 &1294428187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -615,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 260215395}
     - target: {fileID: 3423472413135441213, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
+      value: BeginPlaying
       objectReference: {fileID: 0}
     - target: {fileID: 3423472413135441213, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -627,7 +630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4114666351539763991, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_Text
-      value: MENU
+      value: SKIP/CONFIRM
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114666351539763991, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_Pivot.x
@@ -707,11 +714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 211
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -169
+      value: -132
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
