@@ -505,7 +505,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 27
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -518,12 +518,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "You were just hired as the newest worker at the Turkish Ice Cream Stand!
     Welcome Aboard! Your job is to entertain potential customers into buying your
-    ice cream.\n\n- It is your job to keep the customer happy for as long as possible
-    by performing tricks to raise or lower their energy meter. The more longer you
-    go for, the higher the tip!\n- The customer's faces correspond to their energy
-    level: \n\t- Bored = Energy too low \n\t- Happy = Energy just right \n\t- Angry
-    = Energy too high\n- Start the game by correctly choosing the \ncustomer's ice
-    cream, and then start doing tricks!\n\n\n"
+    ice cream.\n- It is your job to keep the customer happy for as long as possible
+    by performing tricks to raise or lower their energy meter. The longer you go
+    for, the higher the tip! - Navigate the tricks using the arrow keys!\n- The customer's
+    faces correspond to their energy level: \n\t- Bored = Energy too low \n\t- Happy
+    = Energy just right \n\t- Angry = Energy too high\n- Start the game by correctly
+    choosing the \ncustomer's ice cream, and then start doing tricks!\n- Make sure
+    to keep track of your customer's face while doing tricks. Use \nthe view switching
+    button to see them!\n\n"
 --- !u!222 &1294428187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -714,11 +716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 221
+      value: 218
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -132
+      value: -93
       objectReference: {fileID: 0}
     - target: {fileID: 7405796537888122449, guid: 837775cee18cc41a09eec71934f9d603, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
