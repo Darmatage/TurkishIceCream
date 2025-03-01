@@ -18,8 +18,6 @@ public class GameHandler : MonoBehaviour
     private float minThreshold = 50f;
     private float maxThreshold = 100f;
     private float thresholdChange = 5f;
-    private float targetMin = 70f;
-    private float targetMax = 80f;
     public int sceneNum;
     public string flavorChosen; 
     public Button button1; 
@@ -92,16 +90,17 @@ public class GameHandler : MonoBehaviour
                 SceneManager.LoadScene("EndLose");
             }
 
-            if (minThreshold < targetMin)
-                minThreshold += thresholdChange;
-            else 
+            if (minThreshold == 75 && maxThreshold == 75)
                 SceneManager.LoadScene("EndWin");
 
-            if (maxThreshold > targetMax)
+            if (minThreshold < 75)
+                minThreshold += thresholdChange;
+
+            if (maxThreshold > 75)
                 maxThreshold -= thresholdChange;
 
-            minThreshold = Mathf.Clamp(minThreshold, 50f, targetMin);
-            maxThreshold = Mathf.Clamp(maxThreshold, targetMax, 100f);
+            minThreshold = Mathf.Clamp(minThreshold, 50f, 75);
+            maxThreshold = Mathf.Clamp(maxThreshold, 75, 100f);
 
             Debug.Log("Energy: " + childEnergy);
             Debug.Log("Threshold: " + minThreshold + " : " + maxThreshold);

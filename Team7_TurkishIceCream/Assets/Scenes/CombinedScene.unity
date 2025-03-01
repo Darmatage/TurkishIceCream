@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf128de5fbc9a4bf088732ef3ddbe583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startChildEnergy: 50
+  startChildEnergy: 75
   happyFace: {fileID: 185673897}
   straightFace: {fileID: 594486814}
   sadFace: {fileID: 2115488569}
