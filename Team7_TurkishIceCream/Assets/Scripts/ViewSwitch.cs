@@ -21,6 +21,7 @@ public class ViewSwitch : MonoBehaviour
     public void LoadNewView() {
         if (iceCreamChosen == false) {
             //enter ice cream choosing view
+            myGameHandler.sceneNum = 2;
             myGameHandler.happyFace.gameObject.SetActive(false);
             myGameHandler.straightFace.gameObject.SetActive(false);
             myGameHandler.sadFace.gameObject.SetActive(false); 
