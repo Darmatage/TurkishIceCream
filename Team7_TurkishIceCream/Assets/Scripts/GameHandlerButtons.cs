@@ -20,7 +20,7 @@ public class GameHandlerButtons : MonoBehaviour{
         //        scoreTemp.text = "Score: " + score; }
 
         public void StartGame(){
-                SceneManager.LoadScene("CombinedScene");
+                SceneManager.LoadScene("HowToPlay");
         }
 
         public void OpenCredits(){
@@ -37,5 +37,9 @@ public class GameHandlerButtons : MonoBehaviour{
                 #else
                 Application.Quit();
                 #endif
+        }
+
+        public void BeginPlaying() {
+                SceneManager.LoadScene("CombinedScene");
         }
 }

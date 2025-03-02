@@ -18,8 +18,6 @@ public class GameHandler : MonoBehaviour
     private float minThreshold = 50f;
     private float maxThreshold = 100f;
     private float thresholdChange = 5f;
-    private float targetMin = 70f;
-    private float targetMax = 80f;
     public int sceneNum;
     public string flavorChosen; 
     public Button button1; 
@@ -27,7 +25,11 @@ public class GameHandler : MonoBehaviour
     public Button button3; 
     public Button button4; 
     public Button button5; 
-    public Button button6; 
+    public Button button6;
+    public Button switchButton;
+    public GameObject panel;
+    public GameObject CursorMovement;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,8 @@ public class GameHandler : MonoBehaviour
         button4.gameObject.SetActive(false);
         button5.gameObject.SetActive(false);
         button6.gameObject.SetActive(false);
+        CursorMovement.gameObject.SetActive(false);
+        switchButton.gameObject.SetActive(true);
         updateFaceDisplay();
         sceneNum = 0;
         StartCoroutine(AdjustThreshold());
@@ -86,16 +90,17 @@ public class GameHandler : MonoBehaviour
                 SceneManager.LoadScene("EndLose");
             }
 
-            if (minThreshold < targetMin)
-                minThreshold += thresholdChange;
-            else 
+            if (minThreshold == 75 && maxThreshold == 75)
                 SceneManager.LoadScene("EndWin");
 
-            if (maxThreshold > targetMax)
+            if (minThreshold < 75)
+                minThreshold += thresholdChange;
+
+            if (maxThreshold > 75)
                 maxThreshold -= thresholdChange;
 
-            minThreshold = Mathf.Clamp(minThreshold, 50f, targetMin);
-            maxThreshold = Mathf.Clamp(maxThreshold, targetMax, 100f);
+            minThreshold = Mathf.Clamp(minThreshold, 50f, 75);
+            maxThreshold = Mathf.Clamp(maxThreshold, 75, 100f);
 
             Debug.Log("Energy: " + childEnergy);
             Debug.Log("Threshold: " + minThreshold + " : " + maxThreshold);
@@ -109,13 +114,17 @@ public class GameHandler : MonoBehaviour
     {
         if (buttonTag == flavorChosen)
         {
-            sceneNum = 2;
+            sceneNum = 1;
             button1.gameObject.SetActive(false);
             button2.gameObject.SetActive(false);
             button3.gameObject.SetActive(false);
             button4.gameObject.SetActive(false);
             button5.gameObject.SetActive(false);
             button6.gameObject.SetActive(false);
+            switchButton.gameObject.SetActive(true);
+            CursorMovement.gameObject.SetActive(true);
+            canvas.gameObject.SetActive(true);
+            panel.gameObject.SetActive(true);
             Debug.Log("Correct Flavor");
         }
         else
@@ -123,9 +132,6 @@ public class GameHandler : MonoBehaviour
             SceneManager.LoadScene("EndLose");
         }
     }
-
-
-
 
     public void StartGame() 
     {
