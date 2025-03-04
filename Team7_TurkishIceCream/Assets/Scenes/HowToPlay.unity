@@ -423,7 +423,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
     scooping the customer's chosen flavor of ice cream.\n\nUse the view switch button
     to keep an eye on the customer and perform tricks to raise/lower the customer's
     emotion meter so that it stays in the green:\n\t- Select tricks via arrow keys\n\n\t-
-    Perform tricks using spacebar\n\nNotice the customer's expressions...\n\tBored
+    Perform tricks using return/enter\n\nNotice the customer's expressions...\n\tBored
     = Energy too low \n\tHappy = Energy just right \n\tAngry = Energy too high\n\nGood
     luck!\n\n"
 --- !u!222 &1294428187

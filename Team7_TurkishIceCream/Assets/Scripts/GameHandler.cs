@@ -158,9 +158,6 @@ public class GameHandler : MonoBehaviour
         }
         
     }
-
-
-
     public void updateFaceDisplay() 
     {
         if (sceneNum == 0) {
