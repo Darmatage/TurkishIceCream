@@ -30,6 +30,9 @@ public class GameHandler : MonoBehaviour
     public GameObject panel;
     public GameObject CursorMovement;
     public GameObject canvas;
+    public GameObject BgIceCream;
+    public GameObject BgBaby;
+    public GameObject BgTrick;
 
     public Slider energyMeter;
     public Image fillMeter;
@@ -60,6 +63,8 @@ public class GameHandler : MonoBehaviour
         button4.gameObject.SetActive(false);
         button5.gameObject.SetActive(false);
         button6.gameObject.SetActive(false);
+        BgIceCream.gameObject.SetActive(false);
+        BgTrick.gameObject.SetActive(false);
         CursorMovement.gameObject.SetActive(false);
         switchButton.gameObject.SetActive(true);
         updateFaceDisplay();
@@ -168,6 +173,8 @@ public class GameHandler : MonoBehaviour
             button4.gameObject.SetActive(false);
             button5.gameObject.SetActive(false);
             button6.gameObject.SetActive(false);
+            BgTrick.gameObject.SetActive(true);
+            BgIceCream.gameObject.SetActive(false);
             switchButton.gameObject.SetActive(true);
             CursorMovement.gameObject.SetActive(true);
             canvas.gameObject.SetActive(true);
