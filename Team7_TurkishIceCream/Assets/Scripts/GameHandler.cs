@@ -19,8 +19,7 @@ public class GameHandler : MonoBehaviour
     private float maxThreshold = 100f;
     private float thresholdChange = 5f;
     public int sceneNum;
-    public string flavorChosen;
-    public bool iceCreamChosen = false;
+    public string flavorChosen; 
     public Button button1; 
     public Button button2; 
     public Button button3; 
@@ -34,10 +33,6 @@ public class GameHandler : MonoBehaviour
     public GameObject BgIceCream;
     public GameObject BgBaby;
     public GameObject BgTrick;
-    public GameObject positionParent;
-    public GameObject[] positions;
-    public int[] energyChanges;
-    public GameObject cursor;
 
     public Slider energyMeter;
     public Image fillMeter;
@@ -75,15 +70,6 @@ public class GameHandler : MonoBehaviour
         updateFaceDisplay();
         updateEnergyMeter();
         sceneNum = 0;
-        Transform[] poss = positionParent.GetComponentsInChildren<Transform>();
-        energyChanges = new int[poss.Length-1];
-        Debug.Log(energyChanges.Length);
-
-        for (int i = 0; i < poss.Length-1; i++)
-        {
-            energyChanges[i] = poss[i+1].gameObject.GetComponent<EnergyValue>().energy;
-            Debug.Log(energyChanges[i]);
-        }
         StartCoroutine(AdjustThreshold());
     
     }
@@ -91,15 +77,7 @@ public class GameHandler : MonoBehaviour
     void Update() 
     {
         updateEnergyMeter();
-        if (Input.GetKeyDown(KeyCode.Space) && CursorMovement.activeSelf)
-        {
-            int curr = cursor.GetComponent<CursorMovement>().currentLocation-1;
-            Debug.Log("Old child energy:" + childEnergy);
-            childEnergy += energyChanges[curr];
-            Debug.Log("Change in energy:" + energyChanges[curr]);
-            Debug.Log("New child energy:" + childEnergy);
 
-        }
     }
 
     public void energyChange(int newEnergy) 
@@ -201,7 +179,6 @@ public class GameHandler : MonoBehaviour
             CursorMovement.gameObject.SetActive(true);
             canvas.gameObject.SetActive(true);
             panel.gameObject.SetActive(true);
-            iceCreamChosen = true;
             Debug.Log("Correct Flavor");
         }
         else
