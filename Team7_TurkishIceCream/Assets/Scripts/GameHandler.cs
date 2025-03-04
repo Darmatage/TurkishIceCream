@@ -95,7 +95,7 @@ public class GameHandler : MonoBehaviour
         {
             int curr = cursor.GetComponent<CursorMovement>().currentLocation-1;
             Debug.Log("Old child energy:" + childEnergy);
-            childEnergy += energyChanges[curr];
+            energyChange(energyChanges[curr]);
             Debug.Log("Change in energy:" + energyChanges[curr]);
             Debug.Log("New child energy:" + childEnergy);
 
