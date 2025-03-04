@@ -19,9 +19,10 @@ public class ViewSwitch : MonoBehaviour
     }   
 
     public void LoadNewView() {
-        if (iceCreamChosen == false) {
+        if (myGameHandler.sceneNum == 0) {
+            Debug.Log("Child SceneNum = " + myGameHandler.sceneNum);
             //enter ice cream choosing view
-            myGameHandler.sceneNum = 2;
+            myGameHandler.sceneNum = (!myGameHandler.iceCreamChosen) ? 1 : 2;
             myGameHandler.happyFace.gameObject.SetActive(false);
             myGameHandler.straightFace.gameObject.SetActive(false);
             myGameHandler.sadFace.gameObject.SetActive(false); 
@@ -38,10 +39,8 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.switchButton.gameObject.SetActive(false);
             myGameHandler.BgTrick.gameObject.SetActive(false);
             myGameHandler.panel.SetActive(true);
-            iceCreamChosen = true;
-        } else if (myGameHandler.sceneNum == 0) { // pick flavor
-            Debug.Log("SceneNum = " + myGameHandler.sceneNum);
-            myGameHandler.sceneNum = 1;
+        } else if (myGameHandler.iceCreamChosen == false) { // pick flavor
+            myGameHandler.sceneNum = 2;
             myGameHandler.button1.gameObject.SetActive(false);
             myGameHandler.button2.gameObject.SetActive(false);
             myGameHandler.button3.gameObject.SetActive(false);
@@ -54,8 +53,9 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.CursorMovement.gameObject.SetActive(true);
             myGameHandler.BgTrick.gameObject.SetActive(true);
             myGameHandler.canvas.gameObject.SetActive(false);
-        } else { // do tricks 
-            Debug.Log("SceneNum = " + myGameHandler.sceneNum);
+            myGameHandler.iceCreamChosen = true;
+        } else { // do tricks
+            Debug.Log("tricks SceneNum = " + myGameHandler.sceneNum);
             myGameHandler.sceneNum = 0;
             myGameHandler.canvas.gameObject.SetActive(true);
             myGameHandler.CursorMovement.gameObject.SetActive(false);
@@ -66,6 +66,7 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.bubble.gameObject.SetActive(true);
             myGameHandler.panel.SetActive(true);
             myGameHandler.updateFaceDisplay();
+            myGameHandler.iceCreamChosen = true;
         }
     }
 }
