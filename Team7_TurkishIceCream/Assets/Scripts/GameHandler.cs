@@ -80,6 +80,7 @@ public class GameHandler : MonoBehaviour
         childEnergy += newEnergy;
         childEnergy = Mathf.Clamp(childEnergy, 0, 100);
         updateFaceDisplay();
+        updateEnergyMeter();
     }
 
      void updateEnergyMeter()
