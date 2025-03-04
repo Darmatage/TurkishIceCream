@@ -31,6 +31,21 @@ public class GameHandler : MonoBehaviour
     public GameObject CursorMovement;
     public GameObject canvas;
 
+    public Slider energyMeter;
+    public Image fillMeter;
+
+    private Color greenColor = Color.green;
+    private Color orangeColor = new Color(1f, 0.5f, 0f);
+    private Color redColor = Color.red;
+
+
+
+
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,15 +63,45 @@ public class GameHandler : MonoBehaviour
         CursorMovement.gameObject.SetActive(false);
         switchButton.gameObject.SetActive(true);
         updateFaceDisplay();
+        updateEnergyMeter();
         sceneNum = 0;
         StartCoroutine(AdjustThreshold());
+    
+    }
+
+    void Update() 
+    {
+        updateEnergyMeter();
+
     }
 
     public void energyChange(int newEnergy) 
     {
         childEnergy += newEnergy;
+        childEnergy = Mathf.Clamp(childEnergy, 0, 100);
         updateFaceDisplay();
     }
+
+     void updateEnergyMeter()
+    {
+        if (energyMeter != null)
+        {
+            energyMeter.value = childEnergy;
+        }
+
+        if (childEnergy > maxThreshold) {
+            fillMeter.color = redColor; // Overstimulated
+        } 
+        else if (childEnergy >= minThreshold) {
+            fillMeter.color = greenColor; // Normal range
+        } 
+        else {
+            fillMeter.color = orangeColor; // Bored state
+        }
+        
+    }
+
+
 
     public void updateFaceDisplay() 
     {
@@ -106,6 +151,7 @@ public class GameHandler : MonoBehaviour
             Debug.Log("Threshold: " + minThreshold + " : " + maxThreshold);
             if (sceneNum == 0) {
                 updateFaceDisplay();
+                
             }
         }
     }
