@@ -27,10 +27,11 @@ public class ViewSwitch : MonoBehaviour
             myGameHandler.button4.gameObject.SetActive(true);
             myGameHandler.button5.gameObject.SetActive(true);
             myGameHandler.button6.gameObject.SetActive(true);
-            myGameHandler.switchButton.gameObject.SetActive(true);
+            myGameHandler.switchButton.gameObject.SetActive(false);
             myGameHandler.panel.SetActive(true);
             myGameHandler.happyFace.gameObject.SetActive(false);
             myGameHandler.straightFace.gameObject.SetActive(false);
+            myGameHandler.BgIceCream.gameObject.SetActive(true);
             myGameHandler.sadFace.gameObject.SetActive(false);
             myGameHandler.bubble.gameObject.SetActive(false);
             myGameHandler.flavorText.gameObject.SetActive(false);
