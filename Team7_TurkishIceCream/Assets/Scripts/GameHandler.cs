@@ -59,7 +59,7 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerGoing = false;
+        timerGoing = true;
         timer = 0f;
         child = GameObject.FindWithTag("Child");
         SceneName = SceneManager.GetActiveScene().name;
@@ -78,6 +78,7 @@ public class GameHandler : MonoBehaviour
         switchButton.gameObject.SetActive(true);
         updateFaceDisplay();
         updateEnergyMeter();
+        timerStartAndStop();
         sceneNum = 0;
         Transform[] poss = positionParent.GetComponentsInChildren<Transform>();
         energyChanges = new int[poss.Length-1];
@@ -99,23 +100,32 @@ public class GameHandler : MonoBehaviour
             timer += Time.deltaTime;
         }
         updateEnergyMeter();
-        if (Input.GetKeyDown(KeyCode.Space) && CursorMovement.activeSelf)
+        if (CursorMovement.activeSelf)
         {
-            int curr = cursor.GetComponent<CursorMovement>().currentLocation-1;
-            Debug.Log("Old child energy:" + childEnergy);
-            energyChange(energyChanges[curr]);
-            Debug.Log("Change in energy:" + energyChanges[curr]);
-            Debug.Log("New child energy:" + childEnergy);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                int curr = cursor.GetComponent<CursorMovement>().currentLocation - 1;
+                Debug.Log("Old child energy:" + childEnergy);
+                energyChange(energyChanges[curr]);
+                Debug.Log("Change in energy:" + energyChanges[curr]);
+                Debug.Log("New child energy:" + childEnergy);
 
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.LogWarning("end game");
+                endGame();
+            }
         }
+
     }
 
     public void energyChange(int newEnergy) 
     {
         childEnergy += newEnergy;
         childEnergy = Mathf.Clamp(childEnergy, 0, 100);
-        updateFaceDisplay();
-        updateEnergyMeter();
+        //updateFaceDisplay();
+        //updateEnergyMeter();
         timerStartAndStop();
     }
 
@@ -182,19 +192,7 @@ public class GameHandler : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(5f);
-            if (childEnergy < minThreshold) {
-                SceneManager.LoadScene("EndLose");
-                finalScore = timer / 100;
-            } else if (childEnergy > maxThreshold) {
-                SceneManager.LoadScene("EndLose");
-                finalScore = timer / 100;
-            }
-
-            if (minThreshold == 75 && maxThreshold == 75)
-            {
-                SceneManager.LoadScene("EndWin");
-                finalScore = timer / 100;
-            }
+            endGame();
 
             if (minThreshold < 75)
                 minThreshold += thresholdChange;
@@ -211,6 +209,23 @@ public class GameHandler : MonoBehaviour
                 updateFaceDisplay();
                 
             }
+        }
+    }
+
+    private void endGame()
+    {
+        if (childEnergy < minThreshold) {
+            SceneManager.LoadScene("EndLose");
+            finalScore = timer / 100;
+        } else if (childEnergy > maxThreshold) {
+            SceneManager.LoadScene("EndLose");
+            finalScore = timer / 100;
+        }
+
+        if (minThreshold == 75 && maxThreshold == 75)
+        {
+            SceneManager.LoadScene("EndWin");
+            finalScore = timer / 100;
         }
     }
 
