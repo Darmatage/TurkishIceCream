@@ -20,7 +20,7 @@ public class GameHandler : MonoBehaviour
     private float thresholdChange = 5f;
     public int sceneNum;
     public string flavorChosen;
-    public bool iceCreamChosen = false;
+    public bool iceCreamChosen;
     public Button button1; 
     public Button button2; 
     public Button button3; 
@@ -50,16 +50,11 @@ public class GameHandler : MonoBehaviour
     private float timer;
     public float finalScore;
 
-
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
         timerGoing = true;
+        iceCreamChosen = false;
         timer = 0f;
         child = GameObject.FindWithTag("Child");
         SceneName = SceneManager.GetActiveScene().name;
