@@ -97,7 +97,7 @@ public class GameHandler : MonoBehaviour
         updateEnergyMeter();
         if (CursorMovement.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 int curr = cursor.GetComponent<CursorMovement>().currentLocation - 1;
                 Debug.Log("Old child energy:" + childEnergy);
@@ -163,23 +163,25 @@ public class GameHandler : MonoBehaviour
 
     public void updateFaceDisplay() 
     {
-        if (childEnergy > maxThreshold)
-        {
-            happyFace.gameObject.SetActive(false);
-            straightFace.gameObject.SetActive(false);
-            sadFace.gameObject.SetActive(true);
-        }
-        else if (childEnergy >= minThreshold)
-        {
-            happyFace.gameObject.SetActive(true);
-            straightFace.gameObject.SetActive(false);
-            sadFace.gameObject.SetActive(false);
-        }
-        else
-        {
-            happyFace.gameObject.SetActive(false);
-            straightFace.gameObject.SetActive(true);
-            sadFace.gameObject.SetActive(false);
+        if (sceneNum == 0) {
+            if (childEnergy > maxThreshold)
+            {
+                happyFace.gameObject.SetActive(false);
+                straightFace.gameObject.SetActive(false);
+                sadFace.gameObject.SetActive(true);
+            }
+            else if (childEnergy >= minThreshold)
+            {
+                happyFace.gameObject.SetActive(true);
+                straightFace.gameObject.SetActive(false);
+                sadFace.gameObject.SetActive(false);
+            }
+            else
+            {
+                happyFace.gameObject.SetActive(false);
+                straightFace.gameObject.SetActive(true);
+                sadFace.gameObject.SetActive(false);
+            }
         }
     }
     IEnumerator AdjustThreshold()

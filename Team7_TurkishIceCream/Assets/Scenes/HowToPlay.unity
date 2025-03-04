@@ -439,7 +439,7 @@ MonoBehaviour:
     scooping the customer's chosen flavor of ice cream.\n\nUse the view switch button
     to keep an eye on the customer and perform tricks to raise/lower the customer's
     emotion meter so that it stays in the green:\n\t- Select tricks via arrow keys\n\n\t-
-    Perform tricks via spacebar\n\nNotice the customer's expressions...\n\tBored
+    Perform tricks using spacebar\n\nNotice the customer's expressions...\n\tBored
     = Energy too low \n\tHappy = Energy just right \n\tAngry = Energy too high\n\nGood
     luck!\n\n"
 --- !u!222 &1294428187

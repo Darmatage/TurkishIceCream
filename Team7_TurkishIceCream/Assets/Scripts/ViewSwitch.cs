@@ -20,12 +20,14 @@ public class ViewSwitch : MonoBehaviour
 
     public void LoadNewView() {
         if (myGameHandler.iceCreamChosen == false) {
+            myGameHandler.sceneNum = 2;
             myGameHandler.button1.gameObject.SetActive(true);
             myGameHandler.button2.gameObject.SetActive(true);
             myGameHandler.button3.gameObject.SetActive(true);
             myGameHandler.button4.gameObject.SetActive(true);
             myGameHandler.button5.gameObject.SetActive(true);
             myGameHandler.button6.gameObject.SetActive(true);
+            myGameHandler.switchButton.gameObject.SetActive(true);
             myGameHandler.panel.SetActive(true);
             myGameHandler.happyFace.gameObject.SetActive(false);
             myGameHandler.straightFace.gameObject.SetActive(false);
