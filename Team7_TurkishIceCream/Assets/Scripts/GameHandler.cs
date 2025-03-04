@@ -46,7 +46,9 @@ public class GameHandler : MonoBehaviour
     private Color orangeColor = new Color(1f, 0.5f, 0f);
     private Color redColor = Color.red;
 
-
+    private bool timerGoing;
+    private float timer;
+    public float finalScore;
 
 
 
@@ -57,6 +59,8 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timerGoing = false;
+        timer = 0f;
         child = GameObject.FindWithTag("Child");
         SceneName = SceneManager.GetActiveScene().name;
         //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
@@ -90,6 +94,10 @@ public class GameHandler : MonoBehaviour
 
     void Update() 
     {
+        if (timerGoing)
+        {
+            timer += Time.deltaTime;
+        }
         updateEnergyMeter();
         if (Input.GetKeyDown(KeyCode.Space) && CursorMovement.activeSelf)
         {
@@ -108,6 +116,23 @@ public class GameHandler : MonoBehaviour
         childEnergy = Mathf.Clamp(childEnergy, 0, 100);
         updateFaceDisplay();
         updateEnergyMeter();
+        timerStartAndStop();
+    }
+
+    void timerStartAndStop()
+    {
+        if (childEnergy > maxThreshold)
+        {
+            timerGoing = false; // Overstimulated
+        }
+        else if (childEnergy >= minThreshold)
+        {
+            timerGoing = true; // Normal range
+        }
+        else
+        {
+            timerGoing = false; // Bored state
+        }
     }
 
      void updateEnergyMeter()
@@ -159,12 +184,17 @@ public class GameHandler : MonoBehaviour
             yield return new WaitForSeconds(5f);
             if (childEnergy < minThreshold) {
                 SceneManager.LoadScene("EndLose");
+                finalScore = timer / 100;
             } else if (childEnergy > maxThreshold) {
                 SceneManager.LoadScene("EndLose");
+                finalScore = timer / 100;
             }
 
             if (minThreshold == 75 && maxThreshold == 75)
+            {
                 SceneManager.LoadScene("EndWin");
+                finalScore = timer / 100;
+            }
 
             if (minThreshold < 75)
                 minThreshold += thresholdChange;
