@@ -128,15 +128,15 @@ public class GameHandler : MonoBehaviour
     {
         if (childEnergy > maxThreshold)
         {
-            timerGoing = false; // Overstimulated
+            timerGoing = false; 
         }
         else if (childEnergy >= minThreshold)
         {
-            timerGoing = true; // Normal range
+            timerGoing = true; 
         }
         else
         {
-            timerGoing = false; // Bored state
+            timerGoing = false; 
         }
     }
 
@@ -148,13 +148,13 @@ public class GameHandler : MonoBehaviour
         }
 
         if (childEnergy > maxThreshold) {
-            fillMeter.color = redColor; // Overstimulated
+            fillMeter.color = redColor;
         } 
         else if (childEnergy >= minThreshold) {
-            fillMeter.color = greenColor; // Normal range
+            fillMeter.color = greenColor; 
         } 
         else {
-            fillMeter.color = orangeColor; // Bored state
+            fillMeter.color = orangeColor;
         }
         
     }
@@ -196,9 +196,7 @@ public class GameHandler : MonoBehaviour
 
             minThreshold = Mathf.Clamp(minThreshold, 50f, 75);
             maxThreshold = Mathf.Clamp(maxThreshold, 75, 100f);
-
-            Debug.Log("Energy: " + childEnergy);
-            Debug.Log("Threshold: " + minThreshold + " : " + maxThreshold);
+            
             if (sceneNum == 0) {
                 updateFaceDisplay();
                 
