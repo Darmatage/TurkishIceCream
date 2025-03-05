@@ -118,13 +118,13 @@ public class GameHandler : MonoBehaviour
         }
 
         if (childEnergy > maxThreshold) {
-            fillMeter.color = redColor; // Overstimulated
+            fillMeter.color = redColor; 
         } 
         else if (childEnergy >= minThreshold) {
-            fillMeter.color = greenColor; // Normal range
+            fillMeter.color = greenColor;
         } 
         else {
-            fillMeter.color = orangeColor; // Bored state
+            fillMeter.color = orangeColor; 
         }
         
     }
